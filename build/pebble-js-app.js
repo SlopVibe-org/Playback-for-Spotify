@@ -725,7 +725,7 @@
 	
 	var SPOTIFY_CLIENT_ID = '0b9be8bdf4ae48d29bde7e52220d5b5e';
 	var SPOTIFY_REDIRECT_URI = 'https://slopvibe-org.github.io/playback_config/';
-	var SPOTIFY_SCOPES = 'user-read-playback-state user-modify-playback-state user-read-currently-playing playlist-read-private user-library-read user-library-modify user-follow-read';
+	var SPOTIFY_SCOPES = 'user-read-playback-state user-modify-playback-state user-read-currently-playing playlist-read-private user-library-read user-library-modify user-follow-read user-read-recently-played';
 	
 	var TOKEN_KEY = 'spotify_token';
 	var EXPIRY_KEY = 'spotify_token_expiry';
