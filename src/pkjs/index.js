@@ -257,32 +257,61 @@ function sendFormattedItems(listType, items) {
 }
 
 function formatRecentPlaylists(data) {
-  // Extract unique playlist URIs from recently played, preserving play order
+  // Show recently played items - playlists, albums, and individual tracks
   var seen = {};
-  var orderedUris = [];
-  var tracks = (data.recent || data.items || []);
-  for (var i = 0; i < tracks.length; i++) {
-    var ctx = tracks[i].context;
-    if (ctx && ctx.type === 'playlist' && ctx.uri && !seen[ctx.uri]) {
-      seen[ctx.uri] = true;
-      orderedUris.push(ctx.uri);
-    }
-  }
-  // Match against the user's playlists (data.playlists) to get names
+  var items = [];
+  var tracks = (data.recent && data.recent.items) || data.items || [];
+
+  // Build playlist name lookup
   var playlistMap = {};
   var playlists = (data.playlists && data.playlists.items) || [];
   for (var j = 0; j < playlists.length; j++) {
     playlistMap[playlists[j].uri] = playlists[j];
   }
-  var items = [];
-  for (var k = 0; k < orderedUris.length; k++) {
-    var pl = playlistMap[orderedUris[k]];
-    if (pl) {
-      items.push({
-        title: pl.name || 'Playlist',
-        subtitle: (pl.owner) ? pl.owner.display_name || '' : '',
-        uri: pl.uri
-      });
+
+  for (var i = 0; i < tracks.length; i++) {
+    var item = tracks[i];
+    var track = item.track || item;
+    if (!track) continue;
+
+    var ctx = item.context;
+    var key = null;
+    var title = '';
+    var subtitle = '';
+    var uri = '';
+
+    if (ctx && ctx.type === 'playlist' && ctx.uri) {
+      // Playlist context
+      key = ctx.uri;
+      var pl = playlistMap[key];
+      title = pl ? (pl.name || 'Playlist') : 'Playlist';
+      subtitle = (pl && pl.owner) ? (pl.owner.display_name || '') : '';
+      uri = ctx.uri;
+    } else if (ctx && ctx.type === 'album' && ctx.uri) {
+      // Album context
+      key = ctx.uri;
+      if (track.album) {
+        title = track.album.name || 'Album';
+        subtitle = (track.artists && track.artists[0]) ? track.artists[0].name : '';
+      }
+      uri = ctx.uri;
+    } else if (ctx && ctx.type === 'artist' && ctx.uri) {
+      // Artist context
+      key = ctx.uri;
+      title = (track.artists && track.artists[0]) ? track.artists[0].name : 'Artist';
+      subtitle = track.name || '';
+      uri = ctx.uri;
+    } else {
+      // No context - show the track itself
+      key = track.uri;
+      title = track.name || 'Unknown';
+      subtitle = (track.artists && track.artists[0]) ? track.artists[0].name : '';
+      uri = track.uri;
+    }
+
+    if (key && !seen[key]) {
+      seen[key] = true;
+      items.push({ title: title, subtitle: subtitle, uri: uri });
     }
   }
   return items;
