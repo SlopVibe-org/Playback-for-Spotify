@@ -127,7 +127,7 @@ static void draw_scrolling_row(GContext *ctx, const Layer *cell_layer,
 
 static const char *s_type_titles[] = {
   "Playlists", "Artists", "Albums", "Liked Songs", "Podcasts",
-  "Queue"
+  "Queue", "Recently Played"
 };
 
 static char s_status_buf_list[64];

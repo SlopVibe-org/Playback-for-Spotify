@@ -1956,7 +1956,7 @@ LOAD /home/ry/.local/share/pebble-sdk/SDKs/4.17/toolchain/arm-none-eabi/bin/../l
  .rodata.select_long_callback.str1.1
                 0x000039e7       0x12 src/c/list.c.57.o
  .rodata.str1.1
-                0x000039e7       0x34 src/c/list.c.57.o
+                0x000039e7       0x44 src/c/list.c.57.o
  .rodata.music_command_cb.str1.1
                 0x000039e7       0x51 src/c/main.c.57.o
  .rodata.track_info_cb.str1.1
@@ -2018,7 +2018,7 @@ LOAD /home/ry/.local/share/pebble-sdk/SDKs/4.17/toolchain/arm-none-eabi/bin/../l
  .ARM.exidx.text.__udivmoddi4
                 0x000039f0        0x8 /home/ry/.local/share/pebble-sdk/SDKs/4.17/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/libgcc.a(_udivmoddi4.o)
 
-.data           0x000039f8      0x104
+.data           0x000039f8      0x108
  *(.data)
  .data          0x000039f8        0x0 /home/ry/.local/share/pebble-sdk/SDKs/4.17/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crti.o
  .data          0x000039f8        0x0 /home/ry/.local/share/pebble-sdk/SDKs/4.17/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtbegin.o
@@ -2068,266 +2068,266 @@ LOAD /home/ry/.local/share/pebble-sdk/SDKs/4.17/toolchain/arm-none-eabi/bin/../l
  .data          0x00003a10        0x0 /home/ry/.local/share/pebble-sdk/SDKs/4.17/toolchain/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/14.2.1/thumb/v7-m/nofp/crtn.o
  *(.data.*)
  .data.rel.ro.local.s_type_titles
-                0x00003a10       0x18 src/c/list.c.57.o
+                0x00003a10       0x1c src/c/list.c.57.o
  .data.s_marquee_row
-                0x00003a28        0x4 src/c/list.c.57.o
+                0x00003a2c        0x4 src/c/list.c.57.o
  .data.s_loading
-                0x00003a2c        0x1 src/c/list.c.57.o
- *fill*         0x00003a2d        0x3 
+                0x00003a30        0x1 src/c/list.c.57.o
+ *fill*         0x00003a31        0x3 
  .data.rel.ro.local.s_titles
-                0x00003a30       0x20 src/c/menu.c.57.o
+                0x00003a34       0x20 src/c/menu.c.57.o
  .data.s_now_playing_subtitle
-                0x00003a50       0x40 src/c/menu.c.57.o
+                0x00003a54       0x40 src/c/menu.c.57.o
  .data.MESSAGE_KEY_TrackTitle
-                0x00003a90        0x4 src/message_keys.auto.c.57.o
-                0x00003a90                MESSAGE_KEY_TrackTitle
- .data.MESSAGE_KEY_TrackIsPlaying
                 0x00003a94        0x4 src/message_keys.auto.c.57.o
-                0x00003a94                MESSAGE_KEY_TrackIsPlaying
- .data.MESSAGE_KEY_TrackElapsed
+                0x00003a94                MESSAGE_KEY_TrackTitle
+ .data.MESSAGE_KEY_TrackIsPlaying
                 0x00003a98        0x4 src/message_keys.auto.c.57.o
-                0x00003a98                MESSAGE_KEY_TrackElapsed
- .data.MESSAGE_KEY_TrackDuration
+                0x00003a98                MESSAGE_KEY_TrackIsPlaying
+ .data.MESSAGE_KEY_TrackElapsed
                 0x00003a9c        0x4 src/message_keys.auto.c.57.o
-                0x00003a9c                MESSAGE_KEY_TrackDuration
- .data.MESSAGE_KEY_TrackArtist
+                0x00003a9c                MESSAGE_KEY_TrackElapsed
+ .data.MESSAGE_KEY_TrackDuration
                 0x00003aa0        0x4 src/message_keys.auto.c.57.o
-                0x00003aa0                MESSAGE_KEY_TrackArtist
- .data.MESSAGE_KEY_StatusMsg
+                0x00003aa0                MESSAGE_KEY_TrackDuration
+ .data.MESSAGE_KEY_TrackArtist
                 0x00003aa4        0x4 src/message_keys.auto.c.57.o
-                0x00003aa4                MESSAGE_KEY_StatusMsg
- .data.MESSAGE_KEY_ShuffleState
+                0x00003aa4                MESSAGE_KEY_TrackArtist
+ .data.MESSAGE_KEY_StatusMsg
                 0x00003aa8        0x4 src/message_keys.auto.c.57.o
-                0x00003aa8                MESSAGE_KEY_ShuffleState
- .data.MESSAGE_KEY_RepeatState
+                0x00003aa8                MESSAGE_KEY_StatusMsg
+ .data.MESSAGE_KEY_ShuffleState
                 0x00003aac        0x4 src/message_keys.auto.c.57.o
-                0x00003aac                MESSAGE_KEY_RepeatState
- .data.MESSAGE_KEY_ListType
+                0x00003aac                MESSAGE_KEY_ShuffleState
+ .data.MESSAGE_KEY_RepeatState
                 0x00003ab0        0x4 src/message_keys.auto.c.57.o
-                0x00003ab0                MESSAGE_KEY_ListType
- .data.MESSAGE_KEY_ListItemUri
+                0x00003ab0                MESSAGE_KEY_RepeatState
+ .data.MESSAGE_KEY_ListType
                 0x00003ab4        0x4 src/message_keys.auto.c.57.o
-                0x00003ab4                MESSAGE_KEY_ListItemUri
- .data.MESSAGE_KEY_ListItemTitle
+                0x00003ab4                MESSAGE_KEY_ListType
+ .data.MESSAGE_KEY_ListItemUri
                 0x00003ab8        0x4 src/message_keys.auto.c.57.o
-                0x00003ab8                MESSAGE_KEY_ListItemTitle
- .data.MESSAGE_KEY_ListItemSubtitle
+                0x00003ab8                MESSAGE_KEY_ListItemUri
+ .data.MESSAGE_KEY_ListItemTitle
                 0x00003abc        0x4 src/message_keys.auto.c.57.o
-                0x00003abc                MESSAGE_KEY_ListItemSubtitle
- .data.MESSAGE_KEY_ListIndex
+                0x00003abc                MESSAGE_KEY_ListItemTitle
+ .data.MESSAGE_KEY_ListItemSubtitle
                 0x00003ac0        0x4 src/message_keys.auto.c.57.o
-                0x00003ac0                MESSAGE_KEY_ListIndex
- .data.MESSAGE_KEY_ListDone
+                0x00003ac0                MESSAGE_KEY_ListItemSubtitle
+ .data.MESSAGE_KEY_ListIndex
                 0x00003ac4        0x4 src/message_keys.auto.c.57.o
-                0x00003ac4                MESSAGE_KEY_ListDone
- .data.MESSAGE_KEY_ListCount
+                0x00003ac4                MESSAGE_KEY_ListIndex
+ .data.MESSAGE_KEY_ListDone
                 0x00003ac8        0x4 src/message_keys.auto.c.57.o
-                0x00003ac8                MESSAGE_KEY_ListCount
- .data.MESSAGE_KEY_JsReady
+                0x00003ac8                MESSAGE_KEY_ListDone
+ .data.MESSAGE_KEY_ListCount
                 0x00003acc        0x4 src/message_keys.auto.c.57.o
-                0x00003acc                MESSAGE_KEY_JsReady
- .data.MESSAGE_KEY_ImageSlot
+                0x00003acc                MESSAGE_KEY_ListCount
+ .data.MESSAGE_KEY_JsReady
                 0x00003ad0        0x4 src/message_keys.auto.c.57.o
-                0x00003ad0                MESSAGE_KEY_ImageSlot
- .data.MESSAGE_KEY_ImagePromote
+                0x00003ad0                MESSAGE_KEY_JsReady
+ .data.MESSAGE_KEY_ImageSlot
                 0x00003ad4        0x4 src/message_keys.auto.c.57.o
-                0x00003ad4                MESSAGE_KEY_ImagePromote
- .data.MESSAGE_KEY_ImageHeight
+                0x00003ad4                MESSAGE_KEY_ImageSlot
+ .data.MESSAGE_KEY_ImagePromote
                 0x00003ad8        0x4 src/message_keys.auto.c.57.o
-                0x00003ad8                MESSAGE_KEY_ImageHeight
- .data.MESSAGE_KEY_ImageDataSize
+                0x00003ad8                MESSAGE_KEY_ImagePromote
+ .data.MESSAGE_KEY_ImageHeight
                 0x00003adc        0x4 src/message_keys.auto.c.57.o
-                0x00003adc                MESSAGE_KEY_ImageDataSize
- .data.MESSAGE_KEY_ImageChunksTotal
+                0x00003adc                MESSAGE_KEY_ImageHeight
+ .data.MESSAGE_KEY_ImageDataSize
                 0x00003ae0        0x4 src/message_keys.auto.c.57.o
-                0x00003ae0                MESSAGE_KEY_ImageChunksTotal
- .data.MESSAGE_KEY_ImageChunkIndex
+                0x00003ae0                MESSAGE_KEY_ImageDataSize
+ .data.MESSAGE_KEY_ImageChunksTotal
                 0x00003ae4        0x4 src/message_keys.auto.c.57.o
-                0x00003ae4                MESSAGE_KEY_ImageChunkIndex
- .data.MESSAGE_KEY_ImageChunkData
+                0x00003ae4                MESSAGE_KEY_ImageChunksTotal
+ .data.MESSAGE_KEY_ImageChunkIndex
                 0x00003ae8        0x4 src/message_keys.auto.c.57.o
-                0x00003ae8                MESSAGE_KEY_ImageChunkData
- .data.MESSAGE_KEY_ErrorMsg
+                0x00003ae8                MESSAGE_KEY_ImageChunkIndex
+ .data.MESSAGE_KEY_ImageChunkData
                 0x00003aec        0x4 src/message_keys.auto.c.57.o
-                0x00003aec                MESSAGE_KEY_ErrorMsg
- .data.MESSAGE_KEY_CommandContext
+                0x00003aec                MESSAGE_KEY_ImageChunkData
+ .data.MESSAGE_KEY_ErrorMsg
                 0x00003af0        0x4 src/message_keys.auto.c.57.o
-                0x00003af0                MESSAGE_KEY_CommandContext
- .data.MESSAGE_KEY_Command
+                0x00003af0                MESSAGE_KEY_ErrorMsg
+ .data.MESSAGE_KEY_CommandContext
                 0x00003af4        0x4 src/message_keys.auto.c.57.o
-                0x00003af4                MESSAGE_KEY_Command
- .data.MESSAGE_KEY_AuthStatus
+                0x00003af4                MESSAGE_KEY_CommandContext
+ .data.MESSAGE_KEY_Command
                 0x00003af8        0x4 src/message_keys.auto.c.57.o
-                0x00003af8                MESSAGE_KEY_AuthStatus
+                0x00003af8                MESSAGE_KEY_Command
+ .data.MESSAGE_KEY_AuthStatus
+                0x00003afc        0x4 src/message_keys.auto.c.57.o
+                0x00003afc                MESSAGE_KEY_AuthStatus
 
-.igot.plt       0x00003afc        0x0
- .igot.plt      0x00003afc        0x0 src/c/comm.c.57.o
+.igot.plt       0x00003b00        0x0
+ .igot.plt      0x00003b00        0x0 src/c/comm.c.57.o
 
-.got            0x00003afc       0x70
- .got           0x00003afc       0x70 src/c/comm.c.57.o
+.got            0x00003b00       0x70
+ .got           0x00003b00       0x70 src/c/comm.c.57.o
 
-.got.plt        0x00003b6c        0xc
- .got.plt       0x00003b6c        0xc src/c/comm.c.57.o
-                0x00003b6c                _GLOBAL_OFFSET_TABLE_
+.got.plt        0x00003b70        0xc
+ .got.plt       0x00003b70        0xc src/c/comm.c.57.o
+                0x00003b70                _GLOBAL_OFFSET_TABLE_
 
-.bss            0x00003b78      0x814
+.bss            0x00003b7c      0x814
  *(.bss)
  *(.bss.*)
  .bss.s_status_buf
-                0x00003b78       0x40 src/c/comm.c.57.o
+                0x00003b7c       0x40 src/c/comm.c.57.o
  .bss.s_queued_context
-                0x00003bb8       0x80 src/c/comm.c.57.o
+                0x00003bbc       0x80 src/c/comm.c.57.o
  .bss.s_queued_cmd
-                0x00003c38        0x1 src/c/comm.c.57.o
+                0x00003c3c        0x1 src/c/comm.c.57.o
  .bss.s_has_queued_command
-                0x00003c39        0x1 src/c/comm.c.57.o
+                0x00003c3d        0x1 src/c/comm.c.57.o
  .bss.s_js_ready
-                0x00003c3a        0x1 src/c/comm.c.57.o
- *fill*         0x00003c3b        0x1 
+                0x00003c3e        0x1 src/c/comm.c.57.o
+ *fill*         0x00003c3f        0x1 
  .bss.s_bytes_received
-                0x00003c3c        0x4 src/c/comm.c.57.o
+                0x00003c40        0x4 src/c/comm.c.57.o
  .bss.s_received_chunks
-                0x00003c40        0x2 src/c/comm.c.57.o
+                0x00003c44        0x2 src/c/comm.c.57.o
  .bss.s_total_chunks
-                0x00003c42        0x2 src/c/comm.c.57.o
+                0x00003c46        0x2 src/c/comm.c.57.o
  .bss.s_image_data_size
-                0x00003c44        0x4 src/c/comm.c.57.o
- .bss.s_art_data
                 0x00003c48        0x4 src/c/comm.c.57.o
- .bss.s_art_pending
+ .bss.s_art_data
                 0x00003c4c        0x4 src/c/comm.c.57.o
- .bss.s_art_bitmap_prev
+ .bss.s_art_pending
                 0x00003c50        0x4 src/c/comm.c.57.o
- .bss.s_art_bitmap
+ .bss.s_art_bitmap_prev
                 0x00003c54        0x4 src/c/comm.c.57.o
+ .bss.s_art_bitmap
+                0x00003c58        0x4 src/c/comm.c.57.o
  .bss.s_callbacks
-                0x00003c58       0x18 src/c/comm.c.57.o
+                0x00003c5c       0x18 src/c/comm.c.57.o
  .bss.s_revert_timer
-                0x00003c70        0x4 src/c/controls.c.57.o
- .bss.s_mode_cb
                 0x00003c74        0x4 src/c/controls.c.57.o
- .bss.s_cmd_cb  0x00003c78        0x4 src/c/controls.c.57.o
- .bss.s_mode    0x00003c7c        0x1 src/c/controls.c.57.o
- *fill*         0x00003c7d        0x3 
+ .bss.s_mode_cb
+                0x00003c78        0x4 src/c/controls.c.57.o
+ .bss.s_cmd_cb  0x00003c7c        0x4 src/c/controls.c.57.o
+ .bss.s_mode    0x00003c80        0x1 src/c/controls.c.57.o
+ *fill*         0x00003c81        0x3 
  .bss.s_list_status_timer
-                0x00003c80        0x4 src/c/list.c.57.o
+                0x00003c84        0x4 src/c/list.c.57.o
  .bss.s_showing_list_status
-                0x00003c84        0x1 src/c/list.c.57.o
+                0x00003c88        0x1 src/c/list.c.57.o
  .bss.s_status_buf_list
-                0x00003c85       0x40 src/c/list.c.57.o
- *fill*         0x00003cc5        0x3 
+                0x00003c89       0x40 src/c/list.c.57.o
+ *fill*         0x00003cc9        0x3 
  .bss.s_row_marquee
-                0x00003cc8       0x88 src/c/list.c.57.o
+                0x00003ccc       0x88 src/c/list.c.57.o
  .bss.s_dismiss_ms
-                0x00003d50        0x4 src/c/list.c.57.o
- .bss.s_dismiss_timer
                 0x00003d54        0x4 src/c/list.c.57.o
+ .bss.s_dismiss_timer
+                0x00003d58        0x4 src/c/list.c.57.o
  .bss.s_queue_staged
-                0x00003d58        0x1 src/c/list.c.57.o
+                0x00003d5c        0x1 src/c/list.c.57.o
  .bss.s_queue_current_artist
-                0x00003d59       0x20 src/c/list.c.57.o
+                0x00003d5d       0x20 src/c/list.c.57.o
  .bss.s_queue_current_title
-                0x00003d79       0x28 src/c/list.c.57.o
+                0x00003d7d       0x28 src/c/list.c.57.o
  .bss.s_current_type
-                0x00003da1        0x1 src/c/list.c.57.o
- *fill*         0x00003da2        0x2 
+                0x00003da5        0x1 src/c/list.c.57.o
+ *fill*         0x00003da6        0x2 
  .bss.s_items_received
-                0x00003da4        0x4 src/c/list.c.57.o
- .bss.s_items   0x00003da8      0x380 src/c/list.c.57.o
+                0x00003da8        0x4 src/c/list.c.57.o
+ .bss.s_items   0x00003dac      0x380 src/c/list.c.57.o
  .bss.s_list_menu
-                0x00004128        0x4 src/c/list.c.57.o
- .bss.s_list_window
                 0x0000412c        0x4 src/c/list.c.57.o
+ .bss.s_list_window
+                0x00004130        0x4 src/c/list.c.57.o
  .bss.s_long_press_mode
-                0x00004130        0x1 src/c/main.c.57.o
+                0x00004134        0x1 src/c/main.c.57.o
  .bss.s_current_artist
-                0x00004131       0x20 src/c/main.c.57.o
+                0x00004135       0x20 src/c/main.c.57.o
  .bss.s_current_title
-                0x00004151       0x28 src/c/main.c.57.o
- *fill*         0x00004179        0x3 
+                0x00004155       0x28 src/c/main.c.57.o
+ *fill*         0x0000417d        0x3 
  .bss.s_tick_timer
-                0x0000417c        0x4 src/c/main.c.57.o
- .bss.s_repeat_state
                 0x00004180        0x4 src/c/main.c.57.o
- .bss.s_shuffle
-                0x00004184        0x1 src/c/main.c.57.o
- *fill*         0x00004185        0x3 
- .bss.s_total   0x00004188        0x4 src/c/main.c.57.o
- .bss.s_elapsed
-                0x0000418c        0x4 src/c/main.c.57.o
- .bss.s_playing
-                0x00004190        0x1 src/c/main.c.57.o
- .bss.s_np_visible
-                0x00004191        0x1 src/c/main.c.57.o
- *fill*         0x00004192        0x2 
- .bss.s_np_window
-                0x00004194        0x4 src/c/main.c.57.o
- .bss.s_timer   0x00004198        0x4 src/c/marquee.c.57.o
- .bss.s_active_count
-                0x0000419c        0x4 src/c/marquee.c.57.o
- .bss.s_active  0x000041a0       0x20 src/c/marquee.c.57.o
- .bss.s_np_row_highlighted
-                0x000041c0        0x1 src/c/menu.c.57.o
- *fill*         0x000041c1        0x3 
- .bss.s_np_subtitle_marquee
-                0x000041c4       0x88 src/c/menu.c.57.o
- .bss.s_menu_layer
-                0x0000424c        0x4 src/c/menu.c.57.o
- .bss.s_menu_window
-                0x00004250        0x4 src/c/menu.c.57.o
- .bss.s_about_menu
-                0x00004254        0x4 src/c/menu.c.57.o
- .bss.s_about_window
-                0x00004258        0x4 src/c/menu.c.57.o
- .bss.s_art_pending_bmp
-                0x0000425c        0x4 src/c/ui.c.57.o
- .bss.s_art_home
-                0x00004260        0x8 src/c/ui.c.57.o
- .bss.s_artist_home
-                0x00004268        0x8 src/c/ui.c.57.o
- .bss.s_title_home
-                0x00004270        0x8 src/c/ui.c.57.o
- .bss.s_track_received
-                0x00004278        0x1 src/c/ui.c.57.o
- *fill*         0x00004279        0x3 
- .bss.s_text_debounce_timer
-                0x0000427c        0x4 src/c/ui.c.57.o
- .bss.s_no_track_timer
-                0x00004280        0x4 src/c/ui.c.57.o
- .bss.s_marquee_timer
-                0x00004284        0x4 src/c/ui.c.57.o
  .bss.s_repeat_state
+                0x00004184        0x4 src/c/main.c.57.o
+ .bss.s_shuffle
+                0x00004188        0x1 src/c/main.c.57.o
+ *fill*         0x00004189        0x3 
+ .bss.s_total   0x0000418c        0x4 src/c/main.c.57.o
+ .bss.s_elapsed
+                0x00004190        0x4 src/c/main.c.57.o
+ .bss.s_playing
+                0x00004194        0x1 src/c/main.c.57.o
+ .bss.s_np_visible
+                0x00004195        0x1 src/c/main.c.57.o
+ *fill*         0x00004196        0x2 
+ .bss.s_np_window
+                0x00004198        0x4 src/c/main.c.57.o
+ .bss.s_timer   0x0000419c        0x4 src/c/marquee.c.57.o
+ .bss.s_active_count
+                0x000041a0        0x4 src/c/marquee.c.57.o
+ .bss.s_active  0x000041a4       0x20 src/c/marquee.c.57.o
+ .bss.s_np_row_highlighted
+                0x000041c4        0x1 src/c/menu.c.57.o
+ *fill*         0x000041c5        0x3 
+ .bss.s_np_subtitle_marquee
+                0x000041c8       0x88 src/c/menu.c.57.o
+ .bss.s_menu_layer
+                0x00004250        0x4 src/c/menu.c.57.o
+ .bss.s_menu_window
+                0x00004254        0x4 src/c/menu.c.57.o
+ .bss.s_about_menu
+                0x00004258        0x4 src/c/menu.c.57.o
+ .bss.s_about_window
+                0x0000425c        0x4 src/c/menu.c.57.o
+ .bss.s_art_pending_bmp
+                0x00004260        0x4 src/c/ui.c.57.o
+ .bss.s_art_home
+                0x00004264        0x8 src/c/ui.c.57.o
+ .bss.s_artist_home
+                0x0000426c        0x8 src/c/ui.c.57.o
+ .bss.s_title_home
+                0x00004274        0x8 src/c/ui.c.57.o
+ .bss.s_track_received
+                0x0000427c        0x1 src/c/ui.c.57.o
+ *fill*         0x0000427d        0x3 
+ .bss.s_text_debounce_timer
+                0x00004280        0x4 src/c/ui.c.57.o
+ .bss.s_no_track_timer
+                0x00004284        0x4 src/c/ui.c.57.o
+ .bss.s_marquee_timer
                 0x00004288        0x4 src/c/ui.c.57.o
+ .bss.s_repeat_state
+                0x0000428c        0x4 src/c/ui.c.57.o
  .bss.s_shuffle_on
-                0x0000428c        0x1 src/c/ui.c.57.o
- *fill*         0x0000428d        0x3 
+                0x00004290        0x1 src/c/ui.c.57.o
+ *fill*         0x00004291        0x3 
  .bss.s_total_sec
-                0x00004290        0x4 src/c/ui.c.57.o
- .bss.s_elapsed_sec
                 0x00004294        0x4 src/c/ui.c.57.o
+ .bss.s_elapsed_sec
+                0x00004298        0x4 src/c/ui.c.57.o
  .bss.s_time_buf
-                0x00004298       0x18 src/c/ui.c.57.o
+                0x0000429c       0x18 src/c/ui.c.57.o
  .bss.s_artist_display_buf
-                0x000042b0       0x40 src/c/ui.c.57.o
+                0x000042b4       0x40 src/c/ui.c.57.o
  .bss.s_artist_buf
-                0x000042f0       0x40 src/c/ui.c.57.o
+                0x000042f4       0x40 src/c/ui.c.57.o
  .bss.s_title_pending
-                0x00004330       0x40 src/c/ui.c.57.o
+                0x00004334       0x40 src/c/ui.c.57.o
  .bss.s_progress_layer
-                0x00004370        0x4 src/c/ui.c.57.o
- .bss.s_overlay_layer
                 0x00004374        0x4 src/c/ui.c.57.o
- .bss.s_time_layer
+ .bss.s_overlay_layer
                 0x00004378        0x4 src/c/ui.c.57.o
- .bss.s_artist_layer
+ .bss.s_time_layer
                 0x0000437c        0x4 src/c/ui.c.57.o
- .bss.s_title_layer
+ .bss.s_artist_layer
                 0x00004380        0x4 src/c/ui.c.57.o
- .bss.s_art_layer
+ .bss.s_title_layer
                 0x00004384        0x4 src/c/ui.c.57.o
+ .bss.s_art_layer
+                0x00004388        0x4 src/c/ui.c.57.o
  .bss.MESSAGE_KEY_ImageWidth
-                0x00004388        0x4 src/message_keys.auto.c.57.o
-                0x00004388                MESSAGE_KEY_ImageWidth
+                0x0000438c        0x4 src/message_keys.auto.c.57.o
+                0x0000438c                MESSAGE_KEY_ImageWidth
 
 DISCARD
  libc.a(*)
