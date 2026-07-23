@@ -330,7 +330,7 @@
 	    }
 	    var items = formatFn(data);
 	    lastFetchedItems = items;
-	    var count = Math.min(items.length, 20);
+	    var count = Math.min(items.length, 50);
 	    if (count === 0) {
 	      Pebble.sendAppMessage({
 	        'ListType': listType,
@@ -939,7 +939,8 @@
 	  },
 	
 	  getPlaylists: function(cb) {
-	    apiRequest('GET', '/me/playlists?limit=20', cb);
+	    // Fetch up to 50 (API max per request). If user has more, we could paginate further.
+	    apiRequest('GET', '/me/playlists?limit=50', cb);
 	  },
 	
 	  getFollowedArtists: function(cb) {

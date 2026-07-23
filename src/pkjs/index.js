@@ -234,7 +234,7 @@ function fetchAndSendList(listType, apiFn, formatFn) {
     }
     var items = formatFn(data);
     lastFetchedItems = items;
-    var count = Math.min(items.length, 20);
+    var count = Math.min(items.length, 50);
     if (count === 0) {
       Pebble.sendAppMessage({
         'ListType': listType,

@@ -60,7 +60,7 @@ typedef struct {
   char uri[56];
 } ListItem;
 #else
-#define MAX_LIST_ITEMS 20
+#define MAX_LIST_ITEMS 50
 
 typedef struct {
   char title[40];
