@@ -8,6 +8,7 @@ typedef enum {
   CMD_FETCH_ARTISTS      = 3,
   CMD_FETCH_ALBUMS       = 4,
   CMD_FETCH_LIKED_SONGS  = 5,
+  CMD_FETCH_RECENT      = 7,
   CMD_FETCH_SHOWS        = 6,
   CMD_FETCH_QUEUE        = 8,
   CMD_PLAY_PAUSE         = 10,
@@ -40,6 +41,7 @@ void long_press_mode_toggle(void);
 
 // List types
 typedef enum {
+  LIST_TYPE_RECENT       = 6,
   LIST_TYPE_PLAYLISTS    = 0,
   LIST_TYPE_ARTISTS      = 1,
   LIST_TYPE_ALBUMS       = 2,

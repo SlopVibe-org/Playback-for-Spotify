@@ -148,6 +148,7 @@ static char s_now_playing_subtitle[64] = "Not playing";
 // as a separate root-menu row. LIST_TYPE_QUEUE handling in list.c stays.
 static const char *s_titles[] = {
   "Now Playing",
+  "Recently Played",
   "Playlists",
   "Artists",
   "Albums",
@@ -155,7 +156,7 @@ static const char *s_titles[] = {
   "Podcasts",
   "About"
 };
-#define NUM_ROWS 7
+#define NUM_ROWS 8
 
 // Scroll the "Now Playing" subtitle (track title) while row 0 is
 // highlighted. Pixel-based — constant-speed regardless of glyph widths.
@@ -245,26 +246,30 @@ static void select_callback(MenuLayer *menu, MenuIndex *cell_index, void *data) 
       comm_send_command(CMD_FETCH_NOW_PLAYING, NULL);
       break;
     case 1:
+      list_window_push(LIST_TYPE_RECENT);
+      comm_send_command(CMD_FETCH_RECENT, NULL);
+      break;
+    case 2:
       list_window_push(LIST_TYPE_PLAYLISTS);
       comm_send_command(CMD_FETCH_PLAYLISTS, NULL);
       break;
-    case 2:
+    case 3:
       list_window_push(LIST_TYPE_ARTISTS);
       comm_send_command(CMD_FETCH_ARTISTS, NULL);
       break;
-    case 3:
+    case 4:
       list_window_push(LIST_TYPE_ALBUMS);
       comm_send_command(CMD_FETCH_ALBUMS, NULL);
       break;
-    case 4:
+    case 5:
       list_window_push(LIST_TYPE_LIKED_SONGS);
       comm_send_command(CMD_FETCH_LIKED_SONGS, NULL);
       break;
-    case 5:
+    case 6:
       list_window_push(LIST_TYPE_SHOWS);
       comm_send_command(CMD_FETCH_SHOWS, NULL);
       break;
-    case 6:
+    case 7:
       about_window_push();
       break;
   }

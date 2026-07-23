@@ -171,6 +171,7 @@ static uint16_t get_num_rows(MenuLayer *menu, uint16_t section, void *data) {
 
 static const char *empty_text_for_type(ListType type) {
   switch (type) {
+    case LIST_TYPE_RECENT:      return "No recently played";
     case LIST_TYPE_PLAYLISTS:   return "No playlists";
     case LIST_TYPE_ARTISTS:     return "No artists followed";
     case LIST_TYPE_ALBUMS:      return "No saved albums";

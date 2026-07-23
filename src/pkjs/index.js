@@ -232,19 +232,60 @@ function fetchAndSendList(listType, apiFn, formatFn) {
       sendError('No data');
       return;
     }
-    var items = formatFn(data);
-    lastFetchedItems = items;
-    var count = Math.min(items.length, 50);
-    if (count === 0) {
-      Pebble.sendAppMessage({
-        'ListType': listType,
-        'ListDone': 1
-      }, null, null);
-      return;
-    }
-    listSendInProgress = true;
-    sendListItem(listType, items, 0, count);
+    sendFormattedItems(listType, formatFn(data));
   });
+}
+
+// Like fetchAndSendList but with pre-fetched data (no API call)
+function fetchAndSendListDirect(listType, formatFn, data) {
+  lastFetchedListType = listType;
+  sendFormattedItems(listType, formatFn(data));
+}
+
+function sendFormattedItems(listType, items) {
+  lastFetchedItems = items;
+  var count = Math.min(items.length, 50);
+  if (count === 0) {
+    Pebble.sendAppMessage({
+      'ListType': listType,
+      'ListDone': 1
+    }, null, null);
+    return;
+  }
+  listSendInProgress = true;
+  sendListItem(listType, items, 0, count);
+}
+
+function formatRecentPlaylists(data) {
+  // Extract unique playlist URIs from recently played, preserving play order
+  var seen = {};
+  var orderedUris = [];
+  var tracks = (data.recent || data.items || []);
+  for (var i = 0; i < tracks.length; i++) {
+    var ctx = tracks[i].context;
+    if (ctx && ctx.type === 'playlist' && ctx.uri && !seen[ctx.uri]) {
+      seen[ctx.uri] = true;
+      orderedUris.push(ctx.uri);
+    }
+  }
+  // Match against the user's playlists (data.playlists) to get names
+  var playlistMap = {};
+  var playlists = (data.playlists && data.playlists.items) || [];
+  for (var j = 0; j < playlists.length; j++) {
+    playlistMap[playlists[j].uri] = playlists[j];
+  }
+  var items = [];
+  for (var k = 0; k < orderedUris.length; k++) {
+    var pl = playlistMap[orderedUris[k]];
+    if (pl) {
+      items.push({
+        title: pl.name || 'Playlist',
+        subtitle: (pl.owner) ? pl.owner.display_name || '' : '',
+        uri: pl.uri
+      });
+    }
+  }
+  return items;
 }
 
 function formatPlaylists(data) {
@@ -344,6 +385,16 @@ function handleCommand(cmd, context) {
       break;
     case 2: // CMD_FETCH_PLAYLISTS
       fetchAndSendList(0, api.getPlaylists, formatPlaylists);
+      break;
+    case 7: // CMD_FETCH_RECENT
+      // Need both recently-played and all playlists to resolve names
+      api.getRecentlyPlayed(function(err, recent) {
+        if (err) { sendError(err.message); return; }
+        api.getPlaylists(function(err2, playlists) {
+          if (err2) { sendError(err2.message); return; }
+          fetchAndSendListDirect(6, formatRecentPlaylists, { recent: recent, playlists: playlists });
+        });
+      });
       break;
     case 3: // CMD_FETCH_ARTISTS
       fetchAndSendList(1, api.getFollowedArtists, formatArtists);

@@ -81,6 +81,10 @@ module.exports = {
     apiRequest('GET', '/me/player?additional_types=episode', cb);
   },
 
+  getRecentlyPlayed: function(cb) {
+    apiRequest('GET', '/me/player/recently-played?limit=50', cb);
+  },
+
   getPlaylists: function(cb) {
     // Fetch up to 50 (API max per request). If user has more, we could paginate further.
     apiRequest('GET', '/me/playlists?limit=50', cb);
